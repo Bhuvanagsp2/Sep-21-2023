@@ -1,0 +1,39 @@
+body, html {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    display: flex;
+    background: #000;
+}
+div {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    --color: #ff8ef6;
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: 50%;
+        border-top: 10px solid #fff;
+        filter: 
+            drop-shadow(0 0 2px var(--color))
+            drop-shadow(0 0 5px var(--color))
+            drop-shadow(0 0 10px var(--color))
+            drop-shadow(0 0 20px var(--color));
+            animation: rotate 3s infinite linear;
+}
+&::after {
+    --color: #41ffec;
+    animation-delay: -1.5s;
+}
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
